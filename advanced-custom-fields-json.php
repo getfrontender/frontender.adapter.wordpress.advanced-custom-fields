@@ -13,12 +13,12 @@
  * This filter appends the output for advanced custom fields to the post api output.
  * This only happens if the ACF plugin is enabled.
  */
-add_filter('rest_prepare_post', function ($response) {
-	$isEnabled = (function_exists('is_plugin_active') && is_plugin_active('advanced-custom-fields')) || function_exists('get_fields');
+add_filter( 'rest_prepare_post', function ( $response ) {
+	$isEnabled = ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'advanced-custom-fields' ) ) || function_exists( 'get_fields' );
 
-	if($isEnabled) {
+	if ( $isEnabled ) {
 		$response->data['acf'] = get_fields( $response->data['id'] );
 	}
 
 	return $response;
-});
+} );
