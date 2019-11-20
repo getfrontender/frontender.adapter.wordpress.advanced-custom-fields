@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Brickson ACF JSON output
+ * Plugin Name: Advanced Custom Fields JSON
  * Plugin URI: https://brickson.nl
- * Description: A plugin that will output the advanced custom fields to the json.
+ * Description: A plugin that will append the advanced custom fields to the json rest output.
  * Version: 1.0.0
  * Author: Brickson
  * Author URI: https://brickson.nl
