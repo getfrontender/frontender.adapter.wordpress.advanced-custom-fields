@@ -14,7 +14,9 @@
  * This only happens if the ACF plugin is enabled.
  */
 add_filter('rest_prepare_post', function ($response) {
-	if(is_plugin_active('advanced-custom-fields')) {
+	$isEnabled = (function_exists('is_plugin_active') && is_plugin_active('advanced-custom-fields')) || function_exists('get_fields');
+
+	if($isEnabled) {
 		$response->data['acf'] = get_fields( $response->data['id'] );
 	}
 
